@@ -1,0 +1,99 @@
+body{
+    display: flex;
+    font-family: sans-serif;
+    align-items: center;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 90vh;
+    width: 90vw;
+    /* border: 3px green solid; */
+    border-radius: 10px;
+    background-color: rgba(150, 182, 201, 0.745);
+    padding: 5px;
+}
+
+.content {
+    width: 90%;
+    height: 80%;
+    /* border: 3px solid #325c86; */
+    padding: 5px;
+}
+
+.row {
+    /* border: red 1px solid; */
+    height: 16%;
+}
+
+.headRow {
+    height: 12%;
+}
+
+.row, .headRow{
+    display: flex;
+    flex-direction: row;
+    margin: 8px;
+    justify-content: center;
+    align-items: center;
+}
+
+.col {
+    height: 100%;
+    width: 14%;
+    background-color: #e8e9ea;
+    border-radius: 5px;
+    /* border: blue 1px solid; */
+    text-align: center;
+    margin: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected {
+    border: 3px solid lime;
+}
+
+.col .colContainer {
+    height: 100%;
+}
+
+.colContainer{
+    display: flex;
+    flex-direction: column;
+}
+
+.booked1 {
+    background-color: rgba(221, 153, 126, 0.733);
+}
+
+.booked2 {
+    background-color: rgba(228, 238, 88, 0.747);
+}
+
+.datePad{
+    background-color: #444
+}
+
+.date, .day {
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow-wrap: break-word;
+    flex-grow: 1;
+}
+.day{
+    font-size: 24px;
+}
+.date{
+    border: 2px solid blue;
+}
+
+.type{
+    padding: 3px;
+    text-transform: uppercase;
+    color: #4b080b;
+}
