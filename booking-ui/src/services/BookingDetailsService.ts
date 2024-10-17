@@ -1,45 +1,26 @@
+import { BookingItem } from "../models/BookingItem";
+// import { BookingOptions } from "../models/BookingOptions";
 import { Bookings } from "../models/Bookings";
 
 export interface IBookingDetailsService{
-    getBookings(month: number, year: number): Bookings;
+    getBookings(month: number, year: number): Promise<Bookings>;
 }
-export class BookingDetailsService implements IBookingDetailsService{
-    getBookings(month: number, year: number): Bookings {
+
+export class MockBookingDetailsService implements IBookingDetailsService{
+    async getBookings(month: number, year: number): Promise<Bookings> {
         let bookings =  new Bookings();
         bookings.month = month;
         bookings.year = year;
-        bookings.bookingItems = [
-            {
-                id: 1,
-                date: new Date(year, month, 1),
-                location: "New York",
-                bookingType: {
-                    color: "red",
-                    id: "1",
-                    name: "Veg"
-                }
-            },
-            {
-                id: 2,
-                date: new Date(year, month, 2),
-                location: "Los Angeles",
-                bookingType: {
-                    color: "blue",
-                    id: "2",
-                    name: "Training"
-                }
-            },
-            {
-                id: 3,
-                date: new Date(year, month, 3),
-                location: "Chicago",
-                bookingType: {
-                    color: "green",
-                    id: "3",
-                    name: "Interview"
-                }
-            }
-        ];
+        let response = await fetch('/assets/MockBookingData.json');
+        let data: BookingItem[] = await response.json();
+        bookings.bookingItems = data;
+        bookings.bookingItems = bookings.bookingItems.map((bi)=> {
+            return {
+                ...bi,
+                date: new Date(bi.date)
+            };
+        });
+        console.log(bookings)
         return bookings;
     }
 
