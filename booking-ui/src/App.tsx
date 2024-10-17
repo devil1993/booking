@@ -1,17 +1,23 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import BookingCalendar from './Dashboard/BookingCalendar'
+import { useState } from "react";
+import "./App.css";
+import BookingCalendar from "./Dashboard/BookingCalendar";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Welcome from "./Landing/Welcome";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    children: [
+      { index: true, element: <Welcome /> },
+      { path: "/dashboard", element: <BookingCalendar /> },
+    ],
+  },
+]);
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
-  return (
-    <>
-      <BookingCalendar />
-    </>
-  )
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;

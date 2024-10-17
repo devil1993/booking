@@ -14,7 +14,7 @@ const BookingCalendar: React.FC<{}> = () => {
     let [bookings, setBookngs] = useState<Bookings>();
     useEffect(() => {
          service.getBookings(date.getMonth(), date.getFullYear()).then(setBookngs);
-    });
+    }, []);
     let daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
     let grid : CalendarUIModel[][] = [];
     let dateCounter = 1;
