@@ -1,99 +1,67 @@
-body{
-    display: flex;
-    font-family: sans-serif;
-    align-items: center;
-}
+/* CSS HEX 
+--platinum: #dae2dfff;
+--reseda-green: #767a66ff;
+--satin-sheen-gold: #cba135ff;
+--red-pantone: #ef233cff;
+--caput-mortuum: #462521ff;
+*/
+
 .container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 90vh;
-    width: 90vw;
+    height: 100vh;
+    width: 100vw;
     /* border: 3px green solid; */
-    border-radius: 10px;
-    background-color: rgba(150, 182, 201, 0.745);
+    /* border-radius: 10px; */
+    background-color: #767A66;
     padding: 5px;
+    color: #462521;
+    font-size: 24px;
 }
 
 .content {
     width: 90%;
     height: 80%;
     /* border: 3px solid #325c86; */
-    padding: 5px;
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: 1fr repeat(5, 2fr);
+    row-gap: 5px;
 }
 
-.row {
-    /* border: red 1px solid; */
-    height: 16%;
-}
-
-.headRow {
-    height: 12%;
-}
-
-.row, .headRow{
-    display: flex;
-    flex-direction: row;
-    margin: 8px;
-    justify-content: center;
-    align-items: center;
-}
-
-.col {
+.item {
+    /* border: 1px solid #325c86; */
     height: 100%;
-    width: 14%;
-    background-color: #e8e9ea;
     border-radius: 5px;
-    /* border: blue 1px solid; */
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #DAE2DF;
     margin: 2px;
+}
+
+.day{
+    display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
 }
 
-.selected {
-    border: 3px solid lime;
+.calHead{
+    font-weight: 550;
+    font-size: 36px;
 }
 
-.col .colContainer {
-    height: 100%;
-}
-
-.colContainer{
-    display: flex;
-    flex-direction: column;
-}
-
-.booked1 {
-    background-color: rgba(221, 153, 126, 0.733);
-}
-
-.booked2 {
-    background-color: rgba(228, 238, 88, 0.747);
+.calHead:first-child, .calHead:nth-child(7){
+    background-color: #EF233C;
 }
 
 .datePad{
-    background-color: #444
-}
-
-.date, .day {
-    align-content: center;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    overflow-wrap: break-word;
-    flex-grow: 1;
-}
-.day{
-    font-size: 24px;
-}
-.date{
-    border: 2px solid blue;
-}
-
-.type{
-    padding: 3px;
-    text-transform: uppercase;
-    color: #4b080b;
+    background-color: #CBA135;
+    height: 100%;
+    border-radius: 5px;
+    width: 100%;
 }

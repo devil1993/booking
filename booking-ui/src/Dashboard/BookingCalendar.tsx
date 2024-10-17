@@ -1,8 +1,8 @@
 import styles from './BookingCalendar.module.css';
 import { BookingDetailsService } from '../services/BookingDetailsService';
 import { CalendarUIModel } from './CalendarUIModel';
-import CalendarWeek from './CalendarWeek';
 import { v4 } from 'uuid';
+import CalendarDay from './CalendarDay';
 
 
 export function BookingCalendar() {
@@ -48,7 +48,7 @@ export function BookingCalendar() {
         }
     }
     let daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-
+    console.log(grid);
 
     return (
         <div className={styles.container}>
@@ -56,10 +56,8 @@ export function BookingCalendar() {
                 Booking of {month} - {date.getFullYear()}
             </h2>
             <div className={styles.content}>
-                <div className={styles.headRow}>
-                    {daysOfWeek.map((day) => <div key={v4()} className={`${styles.col} ${styles.colContainer}`}><div className={styles.day}>{day}</div></div>)}
-                </div>
-                { grid.map(week => <CalendarWeek key={v4()} weekInfo={week} />) }
+                    {daysOfWeek.map((day) => <div key={v4()} className={`${styles.item} ${styles.calHead}`}><div className={styles.day}>{day}</div></div>)}
+                    { grid.map(week => week.map(day => <CalendarDay day={day} key={v4()}/>)) }
             </div>
 
         </div>
