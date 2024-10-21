@@ -1,0 +1,32 @@
+[
+    {
+        "id": "24ee6239-ba7e-456d-9bf2-c776b71ada5a",
+        "color": "#ffa8a8",
+        "name": "Barrakpore"
+    },
+    {
+        "id": "7f8339d1-762b-41d0-99d7-f9896d6dbced",
+        "color": "#fcc2d7",
+        "name": "Nagerbazar"
+    },
+    {
+        "id": "31d812a0-3486-418f-a721-b8956e41f040",
+        "color": "#eebefa",
+        "name": "Bali"
+    },
+    {
+        "id": "6a4ae472-f10a-470d-8563-28f3e66b4b0a",
+        "color": "#b197fc",
+        "name": "Howrah"
+    },
+    {
+        "id": "7759fd01-6d03-4644-903d-bcf33e7f2af8",
+        "color": "#bac8ff",
+        "name": "Jadavpur"
+    },
+    {
+        "id": "915fdaa9-1aeb-436b-84a3-d9088af8a5d6",
+        "color": "#b2f2bb",
+        "name": "Garia"
+    }
+]

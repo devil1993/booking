@@ -57,7 +57,7 @@ const BookingCalendar: React.FC<{}> = () => {
     console.log(grid);
     return (
         <div className={styles.container}>
-            <h2>
+            <h2 className={styles.heading}>
                 Booking of {month} - {date.getFullYear()}
             </h2>
             <div className={styles.content}>

@@ -15,10 +15,20 @@
     width: 100vw;
     /* border: 3px green solid; */
     /* border-radius: 10px; */
-    background-color: #fff;
+    background-color: #f3f4f5;
     padding: 5px;
     color: #343a40ff;
     font-size: 24px;
+    gap: 5px;
+}
+
+.heading {
+    padding: 20px;
+    font-size: 36px;
+    font-weight: 700;
+    width: 90%;
+    background-color: rgba(21, 171, 191, 0.199);
+    text-align: center;
 }
 
 .content {
@@ -26,21 +36,25 @@
     height: 80%;
     /* border: 3px solid #325c86; */
     display: grid;
-    justify-content: space-around;
+    justify-content: center;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: 1fr repeat(5, 2fr);
-    row-gap: 5px;
+    /* row-gap: 5px; */
 }
 
 .item {
-    /* border: 1px solid #325c86; */
+    border: 1px solid rgba(52, 58, 64, 0.432);
     height: 100%;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     display: flex;
     justify-content: space-around;
     align-items: center;
     background-color: #adb5bdff;
-    margin: 2px;
+    /* margin: 2px; */
+}
+
+.item:hover {
+    cursor: pointer;
 }
 
 .day{
@@ -56,6 +70,9 @@
     background-color: #99e9f2;
 }
 
+.calHead, .calHead:hover{
+    cursor: auto;
+}
 .calHead:first-child, .calHead:nth-child(7){
     background-color: #EF6351;
 }
@@ -65,4 +82,8 @@
     height: 100%;
     border-radius: 5px;
     width: 100%;
+}
+
+.datePad, .datePad:hover {
+    cursor: auto;
 }

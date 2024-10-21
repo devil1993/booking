@@ -5,7 +5,7 @@
       "location": "Sukasada",
       "bookingType": {
         "id": "24ee6239-ba7e-456d-9bf2-c776b71ada5a",
-        "color": "#ec5e26",
+        "color": "#ffa8a8",
         "name": "Barrakpore"
       }
     },
@@ -15,7 +15,7 @@
       "location": "Johor Bahru",
       "bookingType": {
         "id": "7f8339d1-762b-41d0-99d7-f9896d6dbced",
-        "color": "#8ba8c4",
+        "color": "#fcc2d7",
         "name": "Nagerbazar"
       }
     },
@@ -25,7 +25,7 @@
       "location": "Shibganj",
       "bookingType": {
         "id": "31d812a0-3486-418f-a721-b8956e41f040",
-        "color": "#800044",
+        "color": "#eebefa",
         "name": "Bali"
       }
     },
@@ -35,7 +35,7 @@
       "location": "Ilihan",
       "bookingType": {
         "id": "6a4ae472-f10a-470d-8563-28f3e66b4b0a",
-        "color": "#99fbc9",
+        "color": "#b197fc",
         "name": "Howrah"
       }
     },
@@ -44,8 +44,8 @@
       "date": "2024-10-07",
       "location": "Powassan",
       "bookingType": {
-        "id": "c8fbb129-a930-432b-85b7-ed7add628363",
-        "color": "#4fb1de",
+        "id": "7f8339d1-762b-41d0-99d7-f9896d6dbced",
+        "color": "#fcc2d7",
         "name": "Nagerbazar"
       }
     },
@@ -55,7 +55,7 @@
       "location": "Palotina",
       "bookingType": {
         "id": "7759fd01-6d03-4644-903d-bcf33e7f2af8",
-        "color": "#eccf4e",
+        "color": "#bac8ff",
         "name": "Jadavpur"
       }
     },
@@ -64,8 +64,8 @@
       "date": "2024-10-23",
       "location": "Rizómilos",
       "bookingType": {
-        "id": "eb8353b5-e362-4ade-ac98-d60aec02f74d",
-        "color": "#a6fd9c",
+        "id": "6a4ae472-f10a-470d-8563-28f3e66b4b0a",
+        "color": "#b197fc",
         "name": "Howrah"
       }
     },
@@ -74,8 +74,8 @@
       "date": "2024-10-11",
       "location": "Timashëvsk",
       "bookingType": {
-        "id": "f6bfa7f4-2ccb-4632-a894-b01a3a1400db",
-        "color": "#2520d3",
+        "id": "7f8339d1-762b-41d0-99d7-f9896d6dbced",
+        "color": "#fcc2d7",
         "name": "Nagerbazar"
       }
     },
@@ -84,28 +84,8 @@
       "date": "2024-10-04",
       "location": "Jajarkrajan",
       "bookingType": {
-        "id": "db601c9b-bcc7-424c-a83a-57302cf33785",
-        "color": "#0b04e9",
-        "name": "Bali"
-      }
-    },
-    {
-      "id": "a17dc40f-e65d-4f62-990e-ae3884723733",
-      "date": "2024-10-19",
-      "location": "Kajisara",
-      "bookingType": {
-        "id": "915fdaa9-1aeb-436b-84a3-d9088af8a5d6",
-        "color": "#9fc7bf",
-        "name": "Garia"
-      }
-    },
-    {
-      "id": "67a8173d-b60a-4f5e-b6a8-a26096e90ffa",
-      "date": "2024-10-07",
-      "location": "Thị Trấn Hùng Quốc",
-      "bookingType": {
-        "id": "baee1716-c19d-43c5-b29d-d0bb47ffecf5",
-        "color": "#0b0729",
+        "id": "31d812a0-3486-418f-a721-b8956e41f040",
+        "color": "#eebefa",
         "name": "Bali"
       }
     },
@@ -114,8 +94,8 @@
       "date": "2024-10-19",
       "location": "Jisegumen",
       "bookingType": {
-        "id": "b5e6be4c-37c5-46d6-abcb-02d5ea428d6b",
-        "color": "#6434f4",
+        "id": "24ee6239-ba7e-456d-9bf2-c776b71ada5a",
+        "color": "#ffa8a8",
         "name": "Barrakpore"
       }
     },
@@ -124,19 +104,9 @@
       "date": "2024-10-17",
       "location": "Skórcz",
       "bookingType": {
-        "id": "cdbd99a0-7699-4d13-9f81-dfe7b648c849",
-        "color": "#7e0b3d",
+        "id": "915fdaa9-1aeb-436b-84a3-d9088af8a5d6",
+        "color": "#b2f2bb",
         "name": "Garia"
-      }
-    },
-    {
-      "id": "92a79954-abd1-4b67-a244-7ac79edba1cf",
-      "date": "2024-10-30",
-      "location": "Hongjiang",
-      "bookingType": {
-        "id": "ab6fe467-5e43-4a2c-81af-7c4f909339a1",
-        "color": "#4a4ca1",
-        "name": "Bali"
       }
     },
     {
@@ -144,39 +114,9 @@
       "date": "2024-10-15",
       "location": "Maralal",
       "bookingType": {
-        "id": "0beb28e2-1616-4370-9d12-65d873afb60f",
-        "color": "#b2be6a",
+        "id": "7759fd01-6d03-4644-903d-bcf33e7f2af8",
+        "color": "#bac8ff",
         "name": "Jadavpur"
-      }
-    },
-    {
-      "id": "f8df60ee-c3be-406a-b1db-0af07ece413f",
-      "date": "2024-10-30",
-      "location": "Saqqez",
-      "bookingType": {
-        "id": "e9205dc4-e47b-41a8-a008-7eed084638c7",
-        "color": "#7a4176",
-        "name": "Bali"
-      }
-    },
-    {
-      "id": "5a012d9d-4408-4b80-a42c-44705ee1a99c",
-      "date": "2024-10-17",
-      "location": "Falun",
-      "bookingType": {
-        "id": "c6b6c2c5-3e7b-479e-8fc0-e1598395b22a",
-        "color": "#ad1576",
-        "name": "Jadavpur"
-      }
-    },
-    {
-      "id": "51259c07-c163-4873-9b0c-5564950307ed",
-      "date": "2024-10-27",
-      "location": "Pelem",
-      "bookingType": {
-        "id": "5023df66-9a51-4496-b6b2-5c386cab29fb",
-        "color": "#8079b8",
-        "name": "Nagerbazar"
       }
     },
     {
@@ -184,8 +124,8 @@
       "date": "2024-10-28",
       "location": "Protaras",
       "bookingType": {
-        "id": "eb0b006a-31b7-4dfa-a3a3-5637f38d360e",
-        "color": "#e5a68e",
+        "id": "6a4ae472-f10a-470d-8563-28f3e66b4b0a",
+        "color": "#b197fc",
         "name": "Howrah"
       }
     }

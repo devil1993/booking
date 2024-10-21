@@ -20,7 +20,7 @@ export class MockBookingDetailsService implements IBookingDetailsService{
                 date: new Date(bi.date)
             };
         });
-        console.log('XXX', bookings)
+        // console.log('XXX', bookings)
         return bookings;
     }
 
