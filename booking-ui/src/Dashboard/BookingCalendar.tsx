@@ -5,15 +5,23 @@ import { v4 } from 'uuid';
 import CalendarDay from './CalendarDay';
 import { useEffect, useState } from 'react';
 import { Bookings } from '../models/Bookings';
+import { IBookingOptionsService, MockBookingOptionsService } from '../services/BookingOptionsService';
+import { BookingOptions } from '../models/BookingOptions';
+import BookingOverlay from '../PerformBook/BookingOverlay';
 
 
 const BookingCalendar: React.FC<{}> = () => {
     const date = new Date();
     const month = date.toLocaleString('default', { month: 'long' });
-    const service:IBookingDetailsService =new MockBookingDetailsService();
+    const bookingDetailsService:IBookingDetailsService =new MockBookingDetailsService();
+    const bookingOptionsService: IBookingOptionsService = new MockBookingOptionsService();
     let [bookings, setBookngs] = useState<Bookings>();
+    let [bookingOptions, setBookingOptions] = useState<BookingOptions[]>([]);
+    let [isBooking, setIsBooking] = useState(false);
     useEffect(() => {
-         service.getBookings(date.getMonth(), date.getFullYear()).then(setBookngs);
+         bookingDetailsService.getBookings(date.getMonth(), date.getFullYear()).then(setBookngs);
+         bookingOptionsService.getBookingOptions().then(setBookingOptions);
+        //  setTimeout(() => {setIsBooking(true)}, 5000);
     }, []);
     let daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
     let grid : CalendarUIModel[][] = [];
@@ -56,16 +64,19 @@ const BookingCalendar: React.FC<{}> = () => {
     let daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     console.log(grid);
     return (
+        <>
         <div className={styles.container}>
             <h2 className={styles.heading}>
                 Booking of {month} - {date.getFullYear()}
             </h2>
             <div className={styles.content}>
                     { daysOfWeek.map((day) => <div key={v4()} className={`${styles.item} ${styles.calHead}`}><div className={styles.day}>{day}</div></div>)}
-                    { grid.map(week => week.map(day => <CalendarDay day={day} key={v4()}/>)) }
+                    { grid.map(week => week.map(day => <CalendarDay onClick={() => {setIsBooking(true)}} day={day} key={v4()}/>)) }
             </div>
 
         </div>
+        {isBooking && <BookingOverlay onBooked = {() => {setIsBooking(false)}}/>}
+        </>
     );
 }
 

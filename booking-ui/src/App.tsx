@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./App.css";
 import BookingCalendar from "./Dashboard/BookingCalendar";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
@@ -14,7 +13,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-function App() {
+const App: React.FC<{}> = () => {
   return <RouterProvider router={router} />;
 }
 
