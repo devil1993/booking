@@ -1,0 +1,29 @@
+.buttonContainer {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+    background-color: #adb5bd;
+}
+
+button {
+    background-color: rgb(21, 170, 191);
+    color: #343a40;
+    height: 10%;
+    width: 15%;
+    font-family: sans-serif;
+    font-size: 24px;
+    font-weight: 600;
+    border: 1px solid #343a40;
+    border-radius: 1000px;
+    box-shadow: 0 0 10px 5px rgba(21, 170, 191, 0.3);
+}
+
+button:hover{
+    color: rgb(21, 170, 191);
+    background-color: #343a40;
+    box-shadow: 0 0 20px 10px rgba(21, 170, 191, 0.4);
+    cursor: pointer;
+}

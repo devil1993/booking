@@ -1,11 +1,12 @@
 import { useNavigate } from "react-router-dom";
+import styles from './Welcome.module.css';
 
 const Welcome: React.FC<{}> = () => {
     const navigate = useNavigate();
     return (
-        <div style={{display: 'flex', height: '100vh', width: '100vw', 'justifyContent': 'center'}}>
-            <button style={{margin: 'auto', fontSize: '2em'}} onClick={() => {navigate('/dashboard')}}>Goto Calendar</button>
-            <button style={{margin: 'auto', fontSize: '2em'}}>Receive service</button>
+        <div className={styles.buttonContainer}>
+            <button onClick={() => {navigate('/dashboard')}}>Goto Calendar</button>
+            <button>Receive service</button>
         </div>
     );
 }
