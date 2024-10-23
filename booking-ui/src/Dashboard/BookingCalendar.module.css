@@ -55,6 +55,7 @@
 
 .item:hover {
     cursor: pointer;
+    /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.3); */
 }
 
 .day{
@@ -86,4 +87,5 @@
 
 .datePad, .datePad:hover {
     cursor: auto;
+    /* box-shadow: none; */
 }
