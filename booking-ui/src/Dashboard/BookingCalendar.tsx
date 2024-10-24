@@ -8,19 +8,51 @@ import { Bookings } from '../models/Bookings';
 import { IBookingOptionsService, MockBookingOptionsService } from '../services/BookingOptionsService';
 import { BookingOptions } from '../models/BookingOptions';
 import BookingOverlay from '../PerformBook/BookingOverlay';
+import { BookingItem } from '../models/BookingItem';
+import { IBookingService, BookingService } from '../services/BookingService';
 
 
 const BookingCalendar: React.FC<{}> = () => {
+    console.log('called');
     const date = new Date();
     const month = date.toLocaleString('default', { month: 'long' });
     const bookingDetailsService:IBookingDetailsService =new MockBookingDetailsService();
-    const bookingOptionsService: IBookingOptionsService = new MockBookingOptionsService();
-    let [bookings, setBookngs] = useState<Bookings>();
-    let [bookingOptions, setBookingOptions] = useState<BookingOptions[]>([]);
+    // const bookingOptionsService: IBookingOptionsService = new MockBookingOptionsService();
+    const bookingService: IBookingService = new BookingService();
+    let [bookings, setBookings] = useState<Bookings>();
+    let [bookingDay, setBookingDay] = useState<CalendarUIModel>();
     let [isBooking, setIsBooking] = useState(false);
+    // let [bookingOptions, setBookingOptions] = useState<BookingOptions[]>([]);
+    let bookingHandler = async (options: BookingOptions, day: number) => {
+        setIsBooking(false);
+        let newBooking = new BookingItem();
+        newBooking.date = new Date(Date.UTC(date.getFullYear(), date.getMonth(), day));
+        newBooking.bookingType = options;
+        newBooking.id = await bookingService.book(newBooking);
+        newBooking.bookingStatus = 0;
+
+        // repaint the whole thing
+        if(bookings){
+            setBookings({
+                ...bookings,
+                bookingItems: [...bookings.bookingItems, newBooking]
+            })
+        }
+        else {
+            setBookings({
+                month: date.getMonth(),
+                year: date.getFullYear(),
+                bookingItems: [newBooking]
+            });
+        }
+    }
+    let dayClickHandler = (day: CalendarUIModel) => {
+        setBookingDay(day);
+        setIsBooking(true);
+    }
     useEffect(() => {
-         bookingDetailsService.getBookings(date.getMonth(), date.getFullYear()).then(setBookngs);
-         bookingOptionsService.getBookingOptions().then(setBookingOptions);
+         bookingDetailsService.getBookings(date.getMonth(), date.getFullYear()).then(setBookings);
+        //  bookingOptionsService.getBookingOptions().then(setBookingOptions);
         //  setTimeout(() => {setIsBooking(true)}, 5000);
     }, []);
     let daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
@@ -62,7 +94,7 @@ const BookingCalendar: React.FC<{}> = () => {
         }
     }
     let daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
-    console.log(grid);
+    //console.log(grid);
     return (
         <>
         <div className={styles.container}>
@@ -71,11 +103,11 @@ const BookingCalendar: React.FC<{}> = () => {
             </h2>
             <div className={styles.content}>
                     { daysOfWeek.map((day) => <div key={v4()} className={`${styles.item} ${styles.calHead}`}><div className={styles.day}>{day}</div></div>)}
-                    { grid.map(week => week.map(day => <CalendarDay onClick={() => {setIsBooking(true)}} day={day} key={v4()}/>)) }
+                    { grid.map(week => week.map(day => <CalendarDay onClick={dayClickHandler} day={day} key={v4()}/>)) }
             </div>
 
         </div>
-        {isBooking && <BookingOverlay onBooked = {() => {setIsBooking(false)}}/>}
+        {isBooking && bookingDay && <BookingOverlay onBooked = {bookingHandler} day={bookingDay} month={month} year={date.getFullYear()}/>}
         </>
     );
 }

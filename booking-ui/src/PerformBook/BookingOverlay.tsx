@@ -5,7 +5,8 @@ import {
   IBookingOptionsService,
   MockBookingOptionsService,
 } from "../services/BookingOptionsService";
-const BookingOverlay: React.FC<{onBooked: () => void }> = ({onBooked}) => {
+import { CalendarUIModel } from "../Dashboard/CalendarUIModel";
+const BookingOverlay: React.FC<{onBooked: (option: BookingOptions, day:number) => void, day: CalendarUIModel, month: string, year: number }> = ({onBooked, day, month, year}) => {
   let [options, setOptions] = useState<BookingOptions[]>([]);
   const bookingOptionsService: IBookingOptionsService =
     new MockBookingOptionsService();
@@ -17,11 +18,18 @@ const BookingOverlay: React.FC<{onBooked: () => void }> = ({onBooked}) => {
       <div className={styles.bookingContainer}>
         <div className={styles.bookingArea}>
             <div className={styles.header}>
-                <h2>Booking for Oct 21st, 2024  </h2>
+                <h2>Booking for {year}-{month}-{day.date}  </h2>
             </div>
           <div className={styles.bookingOptions}>
             {options.map((option) => (
-              <div key={option.id} className={styles.bookingOption} style={{backgroundColor:option.color}} onClick={onBooked}>
+              <div 
+                key={option.id} 
+                className={styles.bookingOption} 
+                style={{backgroundColor:option.color}} 
+                onClick={
+                    () => {onBooked(option, day.date);}
+                    }
+                >
                 <div>{option.name}</div>
               </div>
             ))}

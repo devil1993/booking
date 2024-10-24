@@ -3,6 +3,7 @@
       "id": "faaae73a-8aeb-4f19-a8bc-c5fb42636dde",
       "date": "2024-10-13",
       "location": "Sukasada",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "24ee6239-ba7e-456d-9bf2-c776b71ada5a",
         "color": "#ffa8a8",
@@ -13,6 +14,7 @@
       "id": "95c0d4cf-55a6-4d5f-bcab-5680efba8759",
       "date": "2024-10-30",
       "location": "Johor Bahru",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "7f8339d1-762b-41d0-99d7-f9896d6dbced",
         "color": "#fcc2d7",
@@ -23,6 +25,7 @@
       "id": "58504533-0281-442c-9750-3b4d30661521",
       "date": "2024-10-14",
       "location": "Shibganj",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "31d812a0-3486-418f-a721-b8956e41f040",
         "color": "#eebefa",
@@ -33,6 +36,7 @@
       "id": "5f650bf0-e98e-47cf-8811-0ac3bcdb7ada",
       "date": "2024-10-06",
       "location": "Ilihan",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "6a4ae472-f10a-470d-8563-28f3e66b4b0a",
         "color": "#b197fc",
@@ -43,6 +47,7 @@
       "id": "2b091dfb-63fb-44ad-9ad2-9619ceeb19f1",
       "date": "2024-10-07",
       "location": "Powassan",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "7f8339d1-762b-41d0-99d7-f9896d6dbced",
         "color": "#fcc2d7",
@@ -53,6 +58,7 @@
       "id": "b30b577c-64d7-433d-afbc-833d1810ac6f",
       "date": "2024-10-26",
       "location": "Palotina",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "7759fd01-6d03-4644-903d-bcf33e7f2af8",
         "color": "#bac8ff",
@@ -63,6 +69,7 @@
       "id": "71474fa3-62b6-40f2-9161-81b5e3e106aa",
       "date": "2024-10-23",
       "location": "Rizómilos",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "6a4ae472-f10a-470d-8563-28f3e66b4b0a",
         "color": "#b197fc",
@@ -73,6 +80,7 @@
       "id": "9405709c-cc2a-4f77-8c05-4bf075d48fcc",
       "date": "2024-10-11",
       "location": "Timashëvsk",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "7f8339d1-762b-41d0-99d7-f9896d6dbced",
         "color": "#fcc2d7",
@@ -83,6 +91,7 @@
       "id": "31d13e99-0d7c-4e13-8251-fedbccd057ae",
       "date": "2024-10-04",
       "location": "Jajarkrajan",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "31d812a0-3486-418f-a721-b8956e41f040",
         "color": "#eebefa",
@@ -93,6 +102,7 @@
       "id": "87732c90-e741-4551-bae0-ac52169b46cc",
       "date": "2024-10-19",
       "location": "Jisegumen",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "24ee6239-ba7e-456d-9bf2-c776b71ada5a",
         "color": "#ffa8a8",
@@ -103,6 +113,7 @@
       "id": "4a42455a-eaf7-4358-adb7-51044115c42b",
       "date": "2024-10-17",
       "location": "Skórcz",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "915fdaa9-1aeb-436b-84a3-d9088af8a5d6",
         "color": "#b2f2bb",
@@ -113,6 +124,7 @@
       "id": "3b4b5e0b-3b5f-45dd-af70-be49fb849c72",
       "date": "2024-10-15",
       "location": "Maralal",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "7759fd01-6d03-4644-903d-bcf33e7f2af8",
         "color": "#bac8ff",
@@ -123,6 +135,7 @@
       "id": "a57343c5-5bdf-49be-9e5d-4eb740f07f61",
       "date": "2024-10-28",
       "location": "Protaras",
+      "bookingStatus": 1,
       "bookingType": {
         "id": "6a4ae472-f10a-470d-8563-28f3e66b4b0a",
         "color": "#b197fc",

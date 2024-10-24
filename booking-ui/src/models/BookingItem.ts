@@ -5,4 +5,5 @@ export class BookingItem {
     date: Date;
     location: string;
     bookingType: BookingOptions;
+    bookingStatus: string;
 }
