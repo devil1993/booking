@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Booking.System.Licensing
+namespace Booking.System.Licensing.Models
 {
-    public class Registration
+    public class LicenseRegistration
     {
+        public string ID { get; set; }
         public string TenantId { get; set; }
         public RegistrationStatus Status { get; set; }
         public LicenseTypes LicenseType { get; set; }

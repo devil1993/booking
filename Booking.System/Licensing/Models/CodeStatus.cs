@@ -1,4 +1,4 @@
-﻿namespace Booking.System.Licensing
+﻿namespace Booking.System.Licensing.Models
 {
     public enum CodeStatus
     {

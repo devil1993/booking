@@ -1,4 +1,4 @@
-﻿namespace Booking.System.Tenancy
+﻿namespace Booking.System.Tenancy.Models
 {
     public enum TenantStatus
     {

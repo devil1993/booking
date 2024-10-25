@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Booking.System.Tenancy
+namespace Booking.System.Tenancy.Models
 {
     public class Tenant
     {
@@ -10,5 +10,6 @@ namespace Booking.System.Tenancy
         public string Name { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedOn { get; set; }
+        public TenantStatus Status { get; set; }
     }
 }

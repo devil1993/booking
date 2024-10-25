@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Booking.System.Licensing
+namespace Booking.System.Exceptions
 {
-    public enum LicenseTypes
+    public class AccessException : Exception
     {
     }
 }

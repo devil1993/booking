@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Booking.System.Tenancy
+namespace Booking.System.Tenancy.DataService
 {
-    public interface ITenencyUserDataService
+    public interface ITenancyUserDataService
     {
         public bool SysAdminExists(string userId);
     }
