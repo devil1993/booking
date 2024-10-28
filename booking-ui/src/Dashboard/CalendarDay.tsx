@@ -1,5 +1,5 @@
+import CalendarUIModel from '../models/CalendarUIModel';
 import styles from './BookingCalendar.module.css';
-import { CalendarUIModel } from "./CalendarUIModel";
 
 const CalendarDay: React.FC<{day: CalendarUIModel, onClick: (day: CalendarUIModel) => void }> = ({day, onClick}) => {
     return (
@@ -10,7 +10,7 @@ const CalendarDay: React.FC<{day: CalendarUIModel, onClick: (day: CalendarUIMode
                 onClick={() => onClick(day)}>
                 <div className={styles.day}>
                     { day.date > 0 && <div className={day.booking? 'booked' : ''}>{day.date}</div> }
-                    { day.booking &&  <div className={styles.type}><strong>{ day.booking.bookingType.name }</strong></div> }
+                    { day.booking &&  <div className={styles.type}><strong>{ day.booking.bookingType }</strong></div> }
                 </div>
             </div>
         </>

@@ -12,12 +12,14 @@ export class MockBookingDetailsService implements IBookingDetailsService{
         bookings.month = month;
         bookings.year = year;
         let response = await fetch('/assets/MockBookingData.json');
-        let data: BookingItem[] = await response.json();
-        bookings.bookingItems = data;
-        bookings.bookingItems = bookings.bookingItems.map((bi)=> {
+        let data: any[] = await response.json();
+        console.log(data);
+        // bookings.bookingItems = data;
+        bookings.bookingItems = data.map((bi)=> {
             return {
                 ...bi,
-                date: new Date(bi.date)
+                bookingType: bi.bookingType.id,
+                date: new Date(bi.date).getTime()
             };
         });
         // console.log('XXX', bookings)

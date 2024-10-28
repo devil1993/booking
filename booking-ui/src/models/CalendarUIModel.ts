@@ -1,6 +1,6 @@
 import { BookingItem } from "../models/BookingItem";
 
-export class CalendarUIModel
+export default class CalendarUIModel
 {
     date:number;
     booking: BookingItem | undefined;

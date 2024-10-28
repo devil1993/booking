@@ -1,9 +1,7 @@
-import { BookingOptions } from "./BookingOptions";
-
 export class BookingItem {
-    id: number;
-    date: Date;
+    id: string;
+    date: number;
     location: string;
-    bookingType: BookingOptions;
+    bookingType: string;
     bookingStatus: string;
 }

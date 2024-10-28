@@ -1,23 +1,28 @@
 import styles from './BookingCalendar.module.css';
 import { IBookingDetailsService, MockBookingDetailsService } from '../services/BookingDetailsService';
-import { CalendarUIModel } from './CalendarUIModel';
+import  CalendarUIModel  from '../models/CalendarUIModel';
 import { v4 } from 'uuid';
 import CalendarDay from './CalendarDay';
 import { useEffect, useState } from 'react';
 import { Bookings } from '../models/Bookings';
-import { IBookingOptionsService, MockBookingOptionsService } from '../services/BookingOptionsService';
 import { BookingOptions } from '../models/BookingOptions';
 import BookingOverlay from '../PerformBook/BookingOverlay';
 import { BookingItem } from '../models/BookingItem';
 import { IBookingService, BookingService } from '../services/BookingService';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { RootState } from '../contexts';
+import bookingCollectionInfo from '../contexts/bookingCollectionContext';
 
 
 const BookingCalendar: React.FC<{}> = () => {
-    console.log('called');
+    const dispatch = useDispatch();
+    const bookingCollection = useSelector((state: RootState) => state.bookingCollection);
+
+    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
     const date = new Date();
     const month = date.toLocaleString('default', { month: 'long' });
     const bookingDetailsService:IBookingDetailsService =new MockBookingDetailsService();
-    // const bookingOptionsService: IBookingOptionsService = new MockBookingOptionsService();
     const bookingService: IBookingService = new BookingService();
     let [bookings, setBookings] = useState<Bookings>();
     let [bookingDay, setBookingDay] = useState<CalendarUIModel>();
@@ -26,11 +31,11 @@ const BookingCalendar: React.FC<{}> = () => {
     let bookingHandler = async (options: BookingOptions, day: number) => {
         setIsBooking(false);
         let newBooking = new BookingItem();
-        newBooking.date = new Date(Date.UTC(date.getFullYear(), date.getMonth(), day));
-        newBooking.bookingType = options;
-        newBooking.id = await bookingService.book(newBooking);
-        newBooking.bookingStatus = 0;
+        newBooking.date = new Date(Date.UTC(date.getFullYear(), date.getMonth(), day)).getTime();
+        newBooking.bookingType = options.id;
+        newBooking = await bookingService.book(newBooking);
 
+        
         // repaint the whole thing
         if(bookings){
             setBookings({
@@ -51,15 +56,19 @@ const BookingCalendar: React.FC<{}> = () => {
         setIsBooking(true);
     }
     useEffect(() => {
-         bookingDetailsService.getBookings(date.getMonth(), date.getFullYear()).then(setBookings);
-        //  bookingOptionsService.getBookingOptions().then(setBookingOptions);
-        //  setTimeout(() => {setIsBooking(true)}, 5000);
+         bookingDetailsService.getBookings(date.getMonth(), date.getFullYear()).then(bookings => {
+            setBookings(bookings);
+            dispatch(bookingCollectionInfo.bookingCollectionActions.setBookingCollection(bookings));
+         });
+         
     }, []);
     let daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0).getDate();
     let grid : CalendarUIModel[][] = [];
     let dateCounter = 1;
     if(bookings)
-    for(let row=0; row<5; row++){
+        
+        // GRID COMPUTATION LOGIC STARTS HERE   
+        for(let row=0; row<5; row++){
         // set up rows
         let columns: CalendarUIModel[] = [];
         grid.push(columns);
@@ -73,12 +82,12 @@ const BookingCalendar: React.FC<{}> = () => {
         }
         while (dateCounter <= daysInMonth && columns.length < 7)
         {
-            let bookingForDate = bookings.bookingItems.filter((bi)=> bi.date.getDate() === dateCounter);
+            let bookingForDate = bookings.bookingItems.filter((bi)=> new Date(bi.date).getDate() === dateCounter);
             grid[row].push(
                 {
                     date: dateCounter,
                     booking: bookingForDate.length>0 ? bookingForDate[0] : undefined,
-                    style: bookingForDate.length>0 ? bookingForDate[0].bookingType.color : ""
+                    style: bookingForDate.length>0 ? bookingForDate[0].bookingType : ""
                 });
             column++;
             dateCounter++;
@@ -93,7 +102,7 @@ const BookingCalendar: React.FC<{}> = () => {
             }
         }
     }
-    let daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    // GRID COMPUTATION LOGIC ENDS HERE
     //console.log(grid);
     return (
         <>

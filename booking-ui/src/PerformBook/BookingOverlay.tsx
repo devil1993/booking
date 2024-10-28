@@ -5,7 +5,7 @@ import {
   IBookingOptionsService,
   MockBookingOptionsService,
 } from "../services/BookingOptionsService";
-import { CalendarUIModel } from "../Dashboard/CalendarUIModel";
+import CalendarUIModel from "../models/CalendarUIModel";
 const BookingOverlay: React.FC<{onBooked: (option: BookingOptions, day:number) => void, day: CalendarUIModel, month: string, year: number }> = ({onBooked, day, month, year}) => {
   let [options, setOptions] = useState<BookingOptions[]>([]);
   const bookingOptionsService: IBookingOptionsService =
