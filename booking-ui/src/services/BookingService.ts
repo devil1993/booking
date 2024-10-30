@@ -1,3 +1,4 @@
+import { v4 } from "uuid";
 import BookingAPIModel, { BookingStatus } from "../models/APIModels/BookingAPIModel";
 import { BookingItem } from "../models/BookingItem";
 
@@ -5,12 +6,19 @@ export interface IBookingService {
     book(booking: BookingItem): Promise<BookingItem>;
 }
 
+export class MockBookingService implements IBookingService{
+    async book(booking: BookingItem): Promise<BookingItem> {
+        booking.id = v4();
+        booking.bookingStatus = BookingStatus.Created.toString();;
+        return booking;
+    }
+}
 export class BookingService implements IBookingService {
     public async book(booking: BookingItem): Promise<BookingItem> {
         let bookingApiObject : BookingAPIModel = new BookingAPIModel();
         bookingApiObject.userId = "123";
         bookingApiObject.date = new Date(booking.date);
-        bookingApiObject.bookingTypeId = booking.bookingType;
+        bookingApiObject.bookingTypeId = booking.bookingType.id;
         bookingApiObject.status = BookingStatus.Created;
 
         let response = await fetch('https://localhost:7287/booking', {

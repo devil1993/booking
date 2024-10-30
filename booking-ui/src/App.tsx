@@ -3,6 +3,7 @@ import BookingCalendar from "./Dashboard/BookingCalendar";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Welcome from "./Landing/Welcome";
 
+
 const router = createBrowserRouter([
   {
     path: "/",

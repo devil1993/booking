@@ -1,7 +1,7 @@
 import { BookingItem } from "./BookingItem";
 
-export class Bookings {
-    public month: number;
-    public year: number;
-    public bookingItems: BookingItem[] = [];
+export interface Bookings {
+    month: number;
+    year: number;
+    bookingItems: BookingItem[];
 }

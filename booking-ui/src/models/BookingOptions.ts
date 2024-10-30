@@ -1,5 +1,5 @@
-export class BookingOptions{
-    public color: string;
-    public id: string;
-    public name: string;
+export interface BookingOptions{
+    color: string;
+    id: string;
+    name: string;
 }

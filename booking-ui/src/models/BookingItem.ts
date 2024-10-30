@@ -1,7 +1,9 @@
-export class BookingItem {
+import { BookingOptions } from "./BookingOptions";
+
+export interface BookingItem {
     id: string;
     date: number;
-    location: string;
-    bookingType: string;
+    // location: string;
+    bookingType: BookingOptions;
     bookingStatus: string;
 }
