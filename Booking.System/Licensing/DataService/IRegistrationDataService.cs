@@ -9,6 +9,7 @@ namespace Booking.System.Licensing.DataService
     {
         LicenseRegistration CreateRegistration(string tenantId, LicenseTypes license, string createdBy);
         LicenseRegistration GetRegistration(string registrationId);
+        LicenseRegistration GetRegistration(string tenantId, LicenseTypes license);
         IEnumerable<LicenseRegistration> GetRegistrationsByTenant(string tenantId);
         LicenseRegistration UpdateRegistration(LicenseRegistration registration);
     }

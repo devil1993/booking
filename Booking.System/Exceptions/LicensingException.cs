@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Booking.System.Exceptions
 {
-    internal class LicensingException
+    public class LicensingException : Exception
     {
     }
 }

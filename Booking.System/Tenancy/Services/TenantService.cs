@@ -2,8 +2,6 @@
 using Booking.System.Tenancy.DataService;
 using Booking.System.Tenancy.Models;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Booking.System.Tenancy.Services
 {
@@ -38,10 +36,12 @@ namespace Booking.System.Tenancy.Services
         public Tenant CreateTenant(string tenantName, string createdBy)
         {
             ValidateSysAdminUser(createdBy);
-            var newTenant = new Tenant();
-            newTenant.Name = tenantName;
-            newTenant.CreatedBy = createdBy;
-            newTenant.CreatedOn = DateTime.UtcNow;
+            var newTenant = new Tenant
+            {
+                Name = tenantName,
+                CreatedBy = createdBy,
+                CreatedOn = DateTime.UtcNow
+            };
 
             return _tenancyDataAccess.AddTenant(newTenant);
         }

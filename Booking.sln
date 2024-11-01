@@ -5,7 +5,11 @@ VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.Web", "Booking.Web\Booking.Web.csproj", "{69BBDE55-6A90-44D5-B634-CE36470B0590}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.System", "Booking.System\Booking.System.csproj", "{2DDEEB49-2250-41F4-8D4F-22179A8107F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.System", "Booking.System\Booking.System.csproj", "{2DDEEB49-2250-41F4-8D4F-22179A8107F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.Admin.Application.Policy", "Booking.Admin.Application.Policy\Booking.Admin.Application.Policy.csproj", "{BC3911A5-A5B6-47BE-8FD3-608985727781}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.SysAdmin.Application.Policy", "Booking.SysAdmin.Application.Policy\Booking.SysAdmin.Application.Policy.csproj", "{169E9D07-F99B-47E9-A705-973F198EF61A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{2DDEEB49-2250-41F4-8D4F-22179A8107F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2DDEEB49-2250-41F4-8D4F-22179A8107F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2DDEEB49-2250-41F4-8D4F-22179A8107F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC3911A5-A5B6-47BE-8FD3-608985727781}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC3911A5-A5B6-47BE-8FD3-608985727781}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC3911A5-A5B6-47BE-8FD3-608985727781}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC3911A5-A5B6-47BE-8FD3-608985727781}.Release|Any CPU.Build.0 = Release|Any CPU
+		{169E9D07-F99B-47E9-A705-973F198EF61A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{169E9D07-F99B-47E9-A705-973F198EF61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{169E9D07-F99B-47E9-A705-973F198EF61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{169E9D07-F99B-47E9-A705-973F198EF61A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

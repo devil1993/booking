@@ -6,5 +6,6 @@ namespace Booking.System.Exceptions
 {
     public class AccessException : Exception
     {
+        
     }
 }
