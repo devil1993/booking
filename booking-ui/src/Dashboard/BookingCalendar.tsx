@@ -58,7 +58,7 @@ const BookingCalendar: React.FC = () => {
     newBooking.date = new Date(
       Date.UTC(date.getFullYear(), date.getMonth(), day)
     ).getTime();
-    newBooking.bookingTypeId = options.id;
+    newBooking.bookingType = options;
     newBooking = await bookingService.book(newBooking);
 
     dispatch(bookingCollectionActions.addBooking(newBooking));
