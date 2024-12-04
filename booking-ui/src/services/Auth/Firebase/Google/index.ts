@@ -1,9 +1,7 @@
-import { NavigateFunction } from "react-router-dom";
-import { auth, googleAuthProvider } from "..";
-import { signInWithPopup } from "firebase/auth";
-import { AppRoutes } from "../../../../Routes";
+import {auth, googleAuthProvider, ISignInResult} from "..";
+import {               GoogleAuthProvider, signInWithPopup} from "firebase/auth";
 
-export const signInWithGoogle = async (navigate: NavigateFunction) => {
+export const signInWithGoogle = async (): Promise<ISignInResult> => {
     console.log('Sign in with Google');
     try {
         const result = await signInWithPopup(auth, googleAuthProvider);
@@ -12,11 +10,20 @@ export const signInWithGoogle = async (navigate: NavigateFunction) => {
         }
         alert(`Welcome ${result.user.displayName}`);
         console.log(result.user.getIdToken());
-        navigate(AppRoutes.Dashboard);
+        const idToken = await result.user.getIdToken();
+
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        console.log(credential?.accessToken);
+
+        return {
+            displayName: result.user.displayName || '',
+            email: result.user.email || '',
+            emailVerified: result.user.emailVerified,
+            photoUrl: result.user.photoURL || '',
+            idToken
+        }
     } catch (error) {
         console.error('Error signing in with Google: ', error);
-    }
-    finally{
-
+        throw error;
     }
 };

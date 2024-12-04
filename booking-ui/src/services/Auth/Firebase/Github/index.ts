@@ -1,9 +1,7 @@
-import { NavigateFunction } from "react-router-dom";
 import { auth, githubAuthProvider } from "..";
-import { AppRoutes } from "../../../../Routes";
 import { signInWithPopup } from "firebase/auth";
 
-export const signInWithGithub = async (navigate: NavigateFunction) => {
+export const signInWithGithub = async () => {
     console.log('Sign in with Github');
     try {
         const result = await signInWithPopup(auth, githubAuthProvider);
@@ -11,12 +9,17 @@ export const signInWithGithub = async (navigate: NavigateFunction) => {
             throw new Error('User not logged in');
         }
         alert(`Welcome ${result.user.displayName}`);
-        console.log(result.user.getIdToken());
-        navigate(AppRoutes.Dashboard);
+        const idToken = await result.user.getIdToken();
+        console.log(idToken);
+        return {
+            displayName: result.user.displayName || '',
+            email: result.user.email || '',
+            emailVerified: result.user.emailVerified,
+            photoUrl: result.user.photoURL || '',
+            idToken
+        }
     } catch (error) {
-        console.error('Error signing in with Google: ', error);
-    }
-    finally{
-
+        console.error('Error signing in with Github: ', error);
+        throw error;
     }
 };

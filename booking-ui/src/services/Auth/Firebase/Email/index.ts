@@ -1,6 +1,6 @@
-import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile } from "firebase/auth";
+import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
 import { SetStateAction } from "react";
-import { auth } from "..";
+import {auth, ISignInResult} from "..";
 
 export const registerUser = async (email: string, name: string, password: string, setLoading: React.Dispatch<SetStateAction<boolean>>) => {
     try {
@@ -25,3 +25,29 @@ export const registerUser = async (email: string, name: string, password: string
         setLoading(false);
     }
 };
+
+
+
+export const signInWithPassword = async (email: string, password: string): Promise<ISignInResult> => {
+    try {
+        const result = await signInWithEmailAndPassword(auth, email, password);
+        if(result && result.user){
+            const idToken = await result.user.getIdToken();
+            return {
+                displayName: result.user.displayName || '',
+                email: result.user.email || '',
+                emailVerified: result.user.emailVerified,
+                idToken,
+                photoUrl: result.user.photoURL
+            }
+        }
+        else{
+            throw new Error("Unable to log user in");
+        }
+    }
+    catch(error){
+        console.error('Error signing in with Password: ', error);
+        throw error;
+    }
+}
+
