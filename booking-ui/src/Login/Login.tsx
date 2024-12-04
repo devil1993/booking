@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { signInWithGoogle } from "../services/Auth/Firebase/Google";
+import { signInWithGithub } from "../services/Auth/Firebase/Github";
 
 const Login: React.FC<{}> = () => {
 
@@ -11,9 +12,10 @@ const Login: React.FC<{}> = () => {
             <label htmlFor="password">Password:</label>
             <input type="password" name="password" id="password" />
             <button type="submit">Login</button>
-            <h3>OR</h3>
-            <button type="button" onClick={() => signInWithGoogle(navigate)}>Continue with Google</button>
-            <button type="button" onClick={() => {window.location.href = '/dashboard'}}>Continue with Facebook</button>
+            <div className="continueWith">OR CONTINUE WITH</div>
+            <button type="button" onClick={() => signInWithGoogle(navigate)}>Google</button>
+            <button type="button" onClick={() => {window.location.href = '/dashboard'}}>Facebook</button>
+            <button type="button" onClick={() => signInWithGithub(navigate)}>Github</button>
         </form>
     );
 }

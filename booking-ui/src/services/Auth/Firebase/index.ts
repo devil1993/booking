@@ -1,5 +1,5 @@
 import { getApp, getApps, initializeApp } from "firebase/app";
-import { FacebookAuthProvider, getAuth, GoogleAuthProvider } from "firebase/auth";
+import { FacebookAuthProvider, getAuth, GithubAuthProvider, GoogleAuthProvider } from "firebase/auth";
 const VITE_FIREBASE_API_KEY = import.meta.env.VITE_FIREBASE_API_KEY;
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -20,7 +20,12 @@ const firebaseApp = getApps().length === 0 ? initializeApp(firebaseConfig) : get
 
 const googleAuthProvider = new GoogleAuthProvider();
 const facebookAuthProvider = new FacebookAuthProvider();
+const githubAuthProvider = new GithubAuthProvider();
 
 const auth = getAuth(firebaseApp);
 
-export { auth, googleAuthProvider, facebookAuthProvider };
+const logOut = async () => {
+    await auth.signOut();
+}
+
+export { auth, googleAuthProvider, facebookAuthProvider, githubAuthProvider, logOut };

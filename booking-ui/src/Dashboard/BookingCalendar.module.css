@@ -18,7 +18,7 @@
     background-color: #f3f4f5;
     padding: 5px;
     color: #343a40ff;
-    font-size: 24px;
+    font-size: 20px;
     gap: 5px;
 }
 
@@ -27,13 +27,13 @@
     font-size: 36px;
     font-weight: 700;
     width: 90%;
-    background-color: rgba(21, 171, 191, 0.199);
+    background-color: #d0ebffb0;
     text-align: center;
 }
 
 .content {
-    width: 90%;
-    height: 80%;
+    width: 70%;
+    height: 65%;
     /* border: 3px solid #325c86; */
     display: grid;
     justify-content: center;
@@ -49,7 +49,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    background-color: #adb5bdff;
+    background-color: #dbe4ff;
     /* margin: 2px; */
 }
 
@@ -75,11 +75,11 @@
     cursor: auto;
 }
 .calHead:first-child, .calHead:nth-child(7){
-    background-color: #EF6351;
+    background-color: #FF8787;
 }
 
 .datePad{
-    background-color: #adb5bdff;
+    background-color: #ced4da;
     height: 100%;
     border-radius: 5px;
     width: 100%;

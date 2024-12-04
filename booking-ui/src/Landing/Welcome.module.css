@@ -5,30 +5,30 @@
     justify-content: center;
     align-items: center;
     gap: 5%;
-    background-color: #adb5bd;
+    background-color: #f1f3f5;
 }
 
 button {
-    background-color: rgb(21, 170, 191);
+    background-color: #4dabf7;
     color: #343a40;
-    height: 10%;
-    width: 15%;
+    height: 7%;
+    width: 12%;
     font-family: sans-serif;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
-    border: 1px solid #343a40;
-    border-radius: 1000px;
-    box-shadow: 0 0 10px 5px rgba(21, 170, 191, 0.3);
+    border: 1px solid #228be6;
+    border-radius: 20px;
+    box-shadow: 0 0 10px 5px #4dabf74d;
 }
 
 button:hover{
-    color: rgb(21, 170, 191);
+    color: #4dabf7;
     background-color: #343a40;
-    box-shadow: 0 0 20px 10px rgba(21, 170, 191, 0.4);
+    box-shadow: 0 0 20px 10px #4dabf766;
     cursor: pointer;
 }
 
 button:focus{
     outline: none;
-    box-shadow: 0 0 40px 30px rgba(21, 170, 191, 0.4);
+    box-shadow: 0 0 40px 30px #4dabf766;
 }

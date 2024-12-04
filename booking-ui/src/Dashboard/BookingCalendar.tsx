@@ -25,6 +25,9 @@ import {
   MockBookingOptionsService,
 } from "../services/BookingOptionsService";
 import bookingEditActions from "../contexts/bookingEditContext";
+import { logOut } from "../services/Auth/Firebase";
+import { useNavigate } from "react-router-dom";
+import { AppRoutes } from "../Routes";
 
 const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
@@ -122,9 +125,14 @@ const BookingCalendar: React.FC = () => {
       }
     }
   // GRID COMPUTATION LOGIC ENDS HERE
-
+  const navigate = useNavigate();
+  const HandleLogout = async () => {
+      await logOut();
+      navigate(AppRoutes.Login);
+  }
   return (
     <>
+    <button onClick={HandleLogout}>Logout</button>
       <div className={styles.container}>
         <h2 className={styles.heading}>
           Booking of {month} - {date.getFullYear()}
