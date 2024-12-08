@@ -10,7 +10,7 @@
 
 .content{
     /*border: 1px red solid;*/
-    width: 70%;
+    width: 75%;
     display: flex;
     /*flex-direction: row;*/
     justify-content: space-around;
@@ -47,13 +47,13 @@
     margin-right: 20px;
 }
 .loginForm > label{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
     align-self: center;
     justify-self: center;
 }
 .loginForm > input{
-    font-size: 20px;
+    font-size: 18px;
     width: 90%;
     padding: 10px;
     margin: 8px;
