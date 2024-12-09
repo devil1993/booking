@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import styles from "./BookingCalendar.module.css";
 
 import CalendarDay from "./CalendarDay";
-import BookingOverlay from "../PerformBook/BookingOverlay";
+import BookingOverlay from "../performBook/BookingOverlay";
 
 import bookingCollectionActions from "../contexts/bookingCollectionContext";
 import bookingOptionActions from "../contexts/bookingOptionsContext";
@@ -27,7 +27,7 @@ import {
 import bookingEditActions from "../contexts/bookingEditContext";
 import { logOut } from "../services/Auth/Firebase";
 import { useNavigate } from "react-router-dom";
-import { AppRoutes } from "../Routes";
+import { AppRoutes } from "../routes";
 
 const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 

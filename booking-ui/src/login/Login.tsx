@@ -2,11 +2,12 @@ import { useNavigate } from "react-router-dom";
 import { signInWithGoogle } from "../services/Auth/Firebase/Google";
 import { signInWithGithub } from "../services/Auth/Firebase/Github";
 import {useState} from "react";
-import {ISignInResult, logOut} from "../services/Auth/Firebase";
 import {signInWithPassword} from "../services/Auth/Firebase/Email";
-import {AppRoutes} from "../Routes";
+import {AppRoutes} from "../routes";
+import ISignInResult from "../models/ISignInResult.ts";
+import {logOut} from "../services/Auth/Firebase";
 
-const Login: React.FC<{}> = () => {
+const Login: React.FC = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();

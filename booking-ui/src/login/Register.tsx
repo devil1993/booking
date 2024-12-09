@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { registerUser } from "../services/Auth/Firebase/Email";
 import { useNavigate } from "react-router-dom";
-import { AppRoutes } from "../Routes";
+import { AppRoutes } from "../routes";
 
 const Register: React.FC<{}> = () => {
     const [email, setEmail] = useState('');

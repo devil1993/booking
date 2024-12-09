@@ -29,11 +29,3 @@ const logOut = async () => {
 }
 
 export { auth, googleAuthProvider, facebookAuthProvider, githubAuthProvider, logOut };
-
-export interface ISignInResult{
-  email: string;
-  displayName: string;
-  emailVerified: boolean;
-  idToken: string;
-  photoUrl: string | null;
-}

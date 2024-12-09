@@ -1,10 +1,10 @@
 import "./App.css";
-import BookingCalendar from "./Dashboard/BookingCalendar";
+import BookingCalendar from "./dashboard/BookingCalendar";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Welcome from "./Landing/Welcome";
-import Login from "./Login/Login";
-import Register from "./Login/Register";
-import { AppRoutes } from "./Routes";
+import Welcome from "./landing/Welcome";
+import Login from "./login/Login";
+import Register from "./login/Register";
+import { AppRoutes } from "./routes";
 
 
 const router = createBrowserRouter([

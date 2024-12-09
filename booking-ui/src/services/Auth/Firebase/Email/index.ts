@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword, sendEmailVerification, updateProfile, signInWithEmailAndPassword } from "firebase/auth";
 import { SetStateAction } from "react";
-import {auth, ISignInResult} from "..";
+import {auth} from "..";
+import ISignInResult from "../../../../models/ISignInResult.ts";
 
 export const registerUser = async (email: string, name: string, password: string, setLoading: React.Dispatch<SetStateAction<boolean>>) => {
     try {

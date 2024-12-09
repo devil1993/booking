@@ -1,6 +1,5 @@
 import styles from "./BookingCalendar.module.css";
 
-import { useSelector } from "react-redux";
 import { RootState, useAppSelector } from "../contexts";
 
 import CalendarUIModel from "../models/CalendarUIModel";
@@ -12,7 +11,7 @@ const CalendarDay: React.FC<{
   const bookingOptions = useAppSelector(
     (state: RootState) => state.bookingOptions.options
   );
-  let currentBookingOption = bookingOptions.find(
+  const currentBookingOption = bookingOptions.find(
     (option) => option.id === day.booking?.bookingType?.id
   );
   return (

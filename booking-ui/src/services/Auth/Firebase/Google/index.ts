@@ -1,11 +1,12 @@
-import {auth, googleAuthProvider, ISignInResult} from "..";
-import {               GoogleAuthProvider, signInWithPopup} from "firebase/auth";
+import {auth, googleAuthProvider} from "..";
+import {GoogleAuthProvider, signInWithPopup} from "firebase/auth";
+import ISignInResult from "../../../../models/ISignInResult.ts";
 
 export const signInWithGoogle = async (): Promise<ISignInResult> => {
     console.log('Sign in with Google');
     try {
         const result = await signInWithPopup(auth, googleAuthProvider);
-        if(!result || !result.user) {
+        if (!result || !result.user) {
             throw new Error('User not logged in');
         }
         alert(`Welcome ${result.user.displayName}`);
