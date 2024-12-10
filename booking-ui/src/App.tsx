@@ -2,8 +2,8 @@ import "./App.css";
 import BookingCalendar from "./dashboard/BookingCalendar";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Welcome from "./landing/Welcome";
-import Login from "./login/Login";
-import Register from "./login/Register";
+import Login from "./login";
+import Register from "./register";
 import { AppRoutes } from "./routes";
 
 
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
   },
 ]);
 
-const App: React.FC<{}> = () => {
+const App: React.FC = () => {
   return <RouterProvider router={router} />;
 }
 

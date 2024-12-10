@@ -8,7 +8,7 @@
     background-color: #f1f3f5;
 }
 
-button {
+.button {
     background-color: #4dabf7;
     color: #343a40;
     height: 7%;
@@ -21,14 +21,14 @@ button {
     box-shadow: 0 0 10px 5px #4dabf74d;
 }
 
-button:hover{
+.button:hover{
     color: #4dabf7;
     background-color: #343a40;
     box-shadow: 0 0 20px 10px #4dabf766;
     cursor: pointer;
 }
 
-button:focus{
+.button:focus{
     outline: none;
     box-shadow: 0 0 40px 30px #4dabf766;
 }

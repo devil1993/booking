@@ -1,0 +1,164 @@
+.container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f1f3f5;
+    color: #495057
+}
+
+.content{
+    /*border: 1px red solid;*/
+    width: 75%;
+    display: flex;
+    /*flex-direction: row;*/
+    justify-content: space-around;
+    align-items: center;
+    background-color: #dee2e6;
+    border-radius: 20px;
+}
+
+.title{
+    font-size: 26px;
+    font-weight: 500;
+    text-transform: uppercase;
+    padding: 10px;
+}
+
+.loginFormArea{
+    margin: 20px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100%;
+}
+.inputs{
+    margin: 20px;
+    padding: 10px;
+}
+.loginForm{
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 3fr 5fr;
+    row-gap: 10px;
+    column-gap: 10px;
+    margin-right: 20px;
+}
+.loginForm > label{
+    font-size: 18px;
+    font-weight: 600;
+    align-self: center;
+    justify-self: center;
+}
+.loginForm > input{
+    font-size: 18px;
+    width: 90%;
+    padding: 10px;
+    margin: 8px;
+    color: #343a40;
+}
+.loginForm > input:focus{
+    box-shadow: 0 0 20px 10px rgba(255, 224, 102, 0.34);
+}
+.input{
+    padding: 5px;
+}
+.input > label {
+    font-size: 20px;
+}
+.button{
+    padding: 16px;
+    border: none;
+    background-color: #ffe066;
+    color: #495057;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 15px;
+    grid-column-start: 2;
+    grid-column-end: 3;
+    font-weight: 600;
+    width: 90%;
+
+}
+.button:hover, .button:focus{
+    box-shadow: 0 0 10px 10px rgba(255, 224, 102, 0.34);
+}
+
+.links{
+    width: 100%;
+    /*margin: 10px;*/
+    /*padding: 10px;*/
+    font-size: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+/*.links > a{*/
+/*    display: block;*/
+/*}*/
+
+.continueWith{
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-top: 20px;
+    padding: 10px;
+}
+.ssoButtons{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.ssoButton {
+    /*display: inline-block;*/
+    padding: 16px;
+    margin: 15px;
+    border: none;
+    background-color: #ffec99 ;
+    color: #495057;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+}
+.ssoButton:hover, .ssoButton:focus{
+    box-shadow: 0 0 10px 10px rgba(255, 224, 102, 0.34);
+}
+
+.heroImage{
+    margin: 20px;
+    width: 50%;
+    /*border: 1px solid green;*/
+}
+
+.mainImage{
+    width: 100%;
+    border-radius: 20px;
+    transform: scale(1.2);
+}
+
+.icons{
+    height: 30px;
+    width: 30px;
+}
+
+.githubIcon{
+    fill:none;
+    stroke:#495057;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+    fill-rule:evenodd;
+    stroke-width: 3;
+}
+
+.googleIcon{
+    fill:#495057;
+    /*stroke:#495057;*/
+}
