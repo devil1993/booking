@@ -14,7 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataProvider\" />
+    <ProjectReference Include="..\Booking.UserManagement.DataAccess\Booking.UserManagement.DataAccess.csproj" />
+    <ProjectReference Include="..\Booking.UserManagement\Booking.UserManagement.csproj" />
   </ItemGroup>
 
 </Project>

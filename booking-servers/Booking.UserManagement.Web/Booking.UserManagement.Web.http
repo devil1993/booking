@@ -1,6 +1,6 @@
 @Booking.UserManagement.Web_HostAddress = http://localhost:5032
 
-GET {{Booking.UserManagement.Web_HostAddress}}/weatherforecast/
+POST {{Booking.UserManagement.Web_HostAddress}}/user/sync
 Accept: application/json
 
 ###

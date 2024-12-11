@@ -1,7 +1,7 @@
-﻿using Booking.UserManagement.Web.Policy.DataService;
-using Booking.UserManagement.Web.Policy.Models;
+﻿using Booking.UserManagement.Policy.DataService;
+using Booking.UserManagement.Policy.Models;
 
-namespace Booking.UserManagement.Web.Policy
+namespace Booking.UserManagement.Policy
 {
     public class UserManagementPolicyImpl : IUserManagementService, IUserService
     {
@@ -36,21 +36,21 @@ namespace Booking.UserManagement.Web.Policy
             }
         }
 
-        public Task<IEnumerable<User>> GetUsers()
+        public async Task<IEnumerable<User>> GetUsers()
         {
-            return _userDataService.GetUsers(new SearchCriteria { PageSize = DEFAULT_PAGE_SIZE, StartIndex = 0 });
+            return await _userDataService.GetUsers(new SearchCriteria { PageSize = DEFAULT_PAGE_SIZE, StartIndex = 0 });
         }
 
-        public Task<User> SyncUser(User user)
+        public async Task<User> SyncUser(User user)
         {
             var existingUser = _userDataService.SearchUser(user.IdentityId);
             if (existingUser == null)
             {
-                return _userDataService.CreateUser(user);
+                return await _userDataService.CreateUser(user);
             }
             else
             {
-                return _userDataService.ModifyUser(user);
+                return await _userDataService.ModifyUser(user);
             }
         }
     }

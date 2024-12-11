@@ -1,6 +1,6 @@
-﻿using Booking.UserManagement.Web.Policy.Models;
+﻿using Booking.UserManagement.Policy.Models;
 
-namespace Booking.UserManagement.Web.Policy
+namespace Booking.UserManagement.Policy
 {
     public interface IUserManagementService
     {
