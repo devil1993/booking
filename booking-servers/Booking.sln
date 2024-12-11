@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.Admin.Application.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.SysAdmin.Application.Policy", "Booking.SysAdmin.Application.Policy\Booking.SysAdmin.Application.Policy.csproj", "{169E9D07-F99B-47E9-A705-973F198EF61A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.UserManagement.Web", "Booking.UserManagement.Web\Booking.UserManagement.Web.csproj", "{CF4FFDE3-E1C7-48CC-91F0-69E9F46624D7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{169E9D07-F99B-47E9-A705-973F198EF61A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{169E9D07-F99B-47E9-A705-973F198EF61A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{169E9D07-F99B-47E9-A705-973F198EF61A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF4FFDE3-E1C7-48CC-91F0-69E9F46624D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF4FFDE3-E1C7-48CC-91F0-69E9F46624D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF4FFDE3-E1C7-48CC-91F0-69E9F46624D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF4FFDE3-E1C7-48CC-91F0-69E9F46624D7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
