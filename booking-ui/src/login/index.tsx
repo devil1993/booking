@@ -7,8 +7,17 @@ import {AppRoutes} from "../routes";
 import ISignInResult from "../models/ISignInResult.ts";
 import {logOut} from "../services/Auth/Firebase";
 import styles from './Login.module.css'
+import {RootState, useAppDispatch, useAppSelector} from "../contexts";
+import {INotificationService, NotificationConfig} from "../services/notification/NotificationService.ts";
+import {ToastifyNotificationService} from "../services/notification/toastify/ToastifyNotificationService.ts";
+import authActions from "../contexts/authContext.ts";
+
+const notificationService : INotificationService = new ToastifyNotificationService();
 
 const Login: React.FC = () => {
+    const dispatch = useAppDispatch();
+    const authState = useAppSelector((state: RootState) => state.auth);
+
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
@@ -22,7 +31,7 @@ const Login: React.FC = () => {
         }
         else{
             console.log(signInResult);
-            // set context
+            dispatch(authActions.setLoggedInUser(signInResult))
             navigate(AppRoutes.Dashboard);
         }
     }
@@ -30,8 +39,14 @@ const Login: React.FC = () => {
         const signInResult = await signInMethod();
         // set context
         console.log(signInResult);
+        dispatch(authActions.setLoggedInUser(signInResult));
         navigate(AppRoutes.Dashboard);
     }
+
+    if(authState){
+        notificationService.notify("You are already logged in.", {} as NotificationConfig);
+    }
+
     return (
         <>
             <div className={styles.container}>

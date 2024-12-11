@@ -5,6 +5,8 @@ import Welcome from "./landing/Welcome";
 import Login from "./login";
 import Register from "./register";
 import { AppRoutes } from "./routes";
+import {ToastContainer} from "react-toastify";
+import "react-toastify/dist/ReactToastify.css"
 
 
 const router = createBrowserRouter([
@@ -20,7 +22,10 @@ const router = createBrowserRouter([
 ]);
 
 const App: React.FC = () => {
-  return <RouterProvider router={router} />;
+  return <>
+    <ToastContainer />
+    <RouterProvider router={router} />
+    </>;
 }
 
 export default App;

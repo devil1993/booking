@@ -3,12 +3,14 @@ import { bookingEditReducer } from "./bookingEditContext";
 import { bookingOptionReducer } from "./bookingOptionsContext";
 import { bookingCollectionReducer } from "./bookingCollectionContext";
 import { TypedUseSelectorHook, useDispatch, useSelector, useStore } from "react-redux";
+import {authReducer} from "./authContext.ts";
 
 const store = configureStore({
   reducer: {
     bookingEdit: bookingEditReducer,
     bookingOptions: bookingOptionReducer,
     bookingCollection: bookingCollectionReducer,
+    auth: authReducer,
   },
 });
 
