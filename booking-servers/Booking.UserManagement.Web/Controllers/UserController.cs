@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc;
 namespace Booking.UserManagement.Web.Controllers
 {
     using Booking.UserManagement.Policy;
+    using Booking.UserManagement.Policy.Models;
+    using Microsoft.AspNetCore.Authorization;
 
     [Route("api/[controller]")]
     [ApiController]
@@ -16,14 +18,13 @@ namespace Booking.UserManagement.Web.Controllers
         {
             _logger = logger;
             _userService = userService;
-            _services = scope.ServiceProvider;
         }
 
+        [Authorize]
         [HttpPost]
         [Route("sync")]
-        public async Task SyncUser()
+        public async Task SyncUser([FromServices] User user)
         {
-            var user = _services.GetRequiredService<Policy.Models.User>();
             user = await _userService.SyncUser(user);
         }
     }

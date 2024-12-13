@@ -13,7 +13,8 @@ namespace Booking.UserManagement.Extensions
         {
             return @this
                     .AddSingleton<Policy.IUserService, Policy.UserManagementPolicyImpl>()
-                    .AddSingleton<Policy.IUserManagementService, Policy.UserManagementPolicyImpl>();
+                    .AddSingleton<Policy.IUserManagementService, Policy.UserManagementPolicyImpl>()
+                    .AddScoped<Policy.Models.User>();
         }
     }
 }

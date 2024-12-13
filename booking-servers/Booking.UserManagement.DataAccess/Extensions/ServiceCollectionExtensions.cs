@@ -1,16 +1,19 @@
-﻿using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using Npgsql.EntityFrameworkCore.PostgreSQL.Extensions;
 
 namespace Booking.UserManagement.DataAccess.Extensions
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection AddUserManagementDataAccess(this IServiceCollection @this)
+        public static IServiceCollection AddUserManagementDataAccess(this IServiceCollection @this, string connectionString)
         {
+            @this.AddDbContext<DbContext.UserDbContext>(
+                options => options.UseNpgsql(
+                    connectionString,
+                    option => option.MigrationsAssembly((typeof(ServiceCollectionExtensions)).Assembly.GetName().Name)
+                    )
+                );
             return @this
                     .AddSingleton<Policy.DataService.IUserDataService, DataProvider.UserDataService>();
         }
