@@ -13,7 +13,6 @@ namespace Booking.UserManagement.Web.Controllers
     {
         private readonly ILogger<UserController> _logger;
         private readonly IUserService _userService;
-        private readonly IServiceProvider _services;
         public UserController(ILogger<UserController> logger, IUserService userService, IServiceProvider scope)
         {
             _logger = logger;

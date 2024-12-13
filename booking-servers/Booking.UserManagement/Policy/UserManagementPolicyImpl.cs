@@ -7,13 +7,15 @@ namespace Booking.UserManagement.Policy
     {
         private ILogger<UserManagementPolicyImpl> _logger;
         private IUserDataService _userDataService;
+        private ContextModel _contextModel;
 
         public const int DEFAULT_PAGE_SIZE = 25;
 
-        public UserManagementPolicyImpl(ILogger<UserManagementPolicyImpl> logger, IUserDataService userDataService)
+        public UserManagementPolicyImpl(ILogger<UserManagementPolicyImpl> logger, IUserDataService userDataService, ContextModel model)
         {
             _logger = logger;
             _userDataService = userDataService;
+            _contextModel = model;
         }
 
         public async Task<bool> DisableUser(string userId)

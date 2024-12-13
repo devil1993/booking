@@ -11,5 +11,9 @@ namespace Booking.UserManagement.DataAccess.DbContext
     public class UserDbContext : Microsoft.EntityFrameworkCore.DbContext
     {
         public DbSet<User> Users { get; set; }
+
+        public UserDbContext(DbContextOptions<UserDbContext> options) : base(options)
+        {
+        }
     }
 }

@@ -2,6 +2,11 @@
 {
     public class ContextModel
     {
+        public const string CORRELATION_ID = "x-correlation-id";
+        public const string TENNANT_ID = "x-tenant-id";
+        public const string ACCESS_TOKEN = "x-access-token";
+        public const string REFRESH_TOKEN = "x-refresh-token";
+
         public string CorrelerationId { get; set; }
         public string TenantId { get; set; }
         public string IdToken { get; set; }

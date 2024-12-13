@@ -4,6 +4,8 @@ using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Hosting;
+using Booking.UserManagement.Web.Middlewares;
+using static System.Net.WebRequestMethods;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,15 +22,19 @@ builder.Services.AddUserManagementDataAccess(connectionStrings.UserPG);
 //{
 var issuer = authConfig.Issuers.First();
     builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-        .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, issuer, options =>
+        .AddJwtBearer(
+        JwtBearerDefaults.AuthenticationScheme,
+        issuer,
+        options =>
         {
             options.Authority = issuer;
             options.TokenValidationParameters = new TokenValidationParameters
             {
                 ValidateIssuer = true,
-                ValidateIssuerSigningKey = true,
                 ValidateLifetime = true,
                 ValidIssuer = issuer,
+                ValidateAudience = false,
+                ValidateIssuerSigningKey = true,
             };
             options.Events = new JwtBearerEvents
             {
@@ -38,15 +44,16 @@ var issuer = authConfig.Issuers.First();
                     logger.LogError("Authentication failed {0}.", context.Exception);
                     return Task.CompletedTask;
                 },
-                OnChallenge = context =>
-                {
-                    var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
-                    logger.LogWarning("Authentication challenge. {0}", context.AuthenticateFailure);
-                    return Task.CompletedTask;
-                }
+                //OnChallenge = context =>
+                //{
+                //    var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
+                //    logger.LogWarning("Authentication challenge. {0}", context.AuthenticateFailure);
+                //    return Task.CompletedTask;
+                //}
             };
         });
 //}
+builder.Services.AddAuthorization();
 builder.Services.AddControllers();
     
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -65,7 +72,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
-
+app.UseMiddleware<ContextExtractionMiddleware>();
+app.UseMiddleware<UserInfoExtractionMiddleware>();
+app.UseAuthorization();
 app.MapControllers();
 
 app.Run();

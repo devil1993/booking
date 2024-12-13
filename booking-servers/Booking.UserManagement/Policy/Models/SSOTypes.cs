@@ -2,8 +2,9 @@
 {
     public enum SSOTypes
     {
+        Email,
         Google,
         Facebook,
-        Github
+        Github,
     }
 }

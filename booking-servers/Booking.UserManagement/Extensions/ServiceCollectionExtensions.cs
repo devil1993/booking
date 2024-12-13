@@ -12,9 +12,10 @@ namespace Booking.UserManagement.Extensions
         public static IServiceCollection AddUserManagementPolicy(this IServiceCollection @this)
         {
             return @this
-                    .AddSingleton<Policy.IUserService, Policy.UserManagementPolicyImpl>()
-                    .AddSingleton<Policy.IUserManagementService, Policy.UserManagementPolicyImpl>()
-                    .AddScoped<Policy.Models.User>();
+                    .AddScoped<Policy.IUserService, Policy.UserManagementPolicyImpl>()
+                    .AddScoped<Policy.IUserManagementService, Policy.UserManagementPolicyImpl>()
+                    .AddScoped<Policy.Models.User>()
+                    .AddScoped<Policy.Models.ContextModel>();
         }
     }
 }
