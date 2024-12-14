@@ -48,6 +48,7 @@ namespace Booking.UserManagement.Policy
             var existingUser = _userDataService.SearchUser(user.IdentityId);
             if (existingUser == null)
             {
+                user.Id = Guid.NewGuid().ToString();
                 return await _userDataService.CreateUser(user);
             }
             else
