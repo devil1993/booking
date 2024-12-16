@@ -17,7 +17,7 @@ builder.Configuration.Bind("ConnectionStrings", connectionStrings);
 
 builder.Services.AddSingleton(connectionStrings);
 builder.Services.AddUserManagementPolicy();
-builder.Services.AddUserManagementDataAccess(connectionStrings.UserPG);
+builder.Services.AddUserManagementDataAccess(connectionStrings.UsersPG);
 //foreach (var issuer in authConfig.Issuers)
 //{
 var issuer = authConfig.Issuers.First();

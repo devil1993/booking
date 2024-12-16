@@ -2,6 +2,6 @@
 {
     public class ConnectionStrings
     {
-        public string UserPG { get; set; }
+        public string UsersPG { get; set; }
     }
 }

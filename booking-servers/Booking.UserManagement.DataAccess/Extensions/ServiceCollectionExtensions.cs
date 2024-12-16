@@ -15,7 +15,7 @@ namespace Booking.UserManagement.DataAccess.Extensions
                     )
                 );
             return @this
-                    .AddSingleton<Policy.DataService.IUserDataService, DataProvider.UserDataService>();
+                    .AddScoped<Policy.DataService.IUserDataService, DataProvider.UserDataService>();
         }
     }
 }
