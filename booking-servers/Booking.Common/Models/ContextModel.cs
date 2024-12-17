@@ -1,4 +1,4 @@
-﻿namespace Booking.UserManagement.Policy.Models
+﻿namespace Booking.Common.Models
 {
     public class ContextModel
     {

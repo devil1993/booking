@@ -1,6 +1,12 @@
-﻿using Booking.UserManagement.Policy.Models;
+﻿using Booking.Common.Models;
+using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 
-namespace Booking.UserManagement.Web.Middlewares
+namespace Booking.Common.Web.Middlewares
 {
     public class ContextExtractionMiddleware
     {

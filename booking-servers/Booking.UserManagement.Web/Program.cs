@@ -1,5 +1,6 @@
 using Booking.UserManagement.Extensions;
 using Booking.UserManagement.DataAccess.Extensions;
+using Booking.Common.Web.Middlewares;
 using Microsoft.AspNetCore.Mvc.ModelBinding;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Authentication.JwtBearer;

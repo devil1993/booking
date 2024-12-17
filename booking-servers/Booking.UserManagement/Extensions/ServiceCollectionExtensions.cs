@@ -15,7 +15,7 @@ namespace Booking.UserManagement.Extensions
                     .AddScoped<Policy.IUserService, Policy.UserManagementPolicyImpl>()
                     .AddScoped<Policy.IUserManagementService, Policy.UserManagementPolicyImpl>()
                     .AddScoped<Policy.Models.User>()
-                    .AddScoped<Policy.Models.ContextModel>();
+                    .AddScoped<Common.Models.ContextModel>();
         }
     }
 }

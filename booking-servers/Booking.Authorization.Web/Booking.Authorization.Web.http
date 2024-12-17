@@ -1,0 +1,6 @@
+@Booking.Authorization.Web_HostAddress = http://localhost:5126
+
+GET {{Booking.Authorization.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
