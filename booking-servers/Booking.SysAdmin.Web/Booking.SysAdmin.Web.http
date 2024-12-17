@@ -1,0 +1,6 @@
+@Booking.SysAdmin.Web_HostAddress = http://localhost:5222
+
+GET {{Booking.SysAdmin.Web_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
