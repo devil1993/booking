@@ -41,7 +41,7 @@ const Register: React.FC = () => {
                                 {/*<div className={styles.input}>*/}
                                 <label htmlFor="password">Password</label>
                                 <input type="password" id="password" name="password" required tabIndex={2}
-                                       placeholder={"password"} value={email} onChange={e => setPassword(e.target.value)}/>
+                                       placeholder={"password"} value={password} onChange={e => setPassword(e.target.value)}/>
                                 <label htmlFor="confirmPassword">Confirm Password</label>
                                 <input type="password" id="cnfPassword" name="cnfPassword" required tabIndex={3}
                                        placeholder={"confirm password"}/>
