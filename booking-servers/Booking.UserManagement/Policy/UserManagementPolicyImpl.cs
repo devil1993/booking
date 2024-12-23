@@ -1,4 +1,5 @@
-﻿using Booking.UserManagement.Policy.DataService;
+﻿using Booking.Common.Models;
+using Booking.UserManagement.Policy.DataService;
 using Booking.UserManagement.Policy.Models;
 
 namespace Booking.UserManagement.Policy
