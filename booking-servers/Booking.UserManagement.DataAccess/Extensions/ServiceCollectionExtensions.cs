@@ -11,7 +11,7 @@ namespace Booking.UserManagement.DataAccess.Extensions
             @this.AddDbContext<DbContext.UserDbContext>(
                 options => options.UseNpgsql(
                     connectionString,
-                    option => option.MigrationsAssembly((typeof(ServiceCollectionExtensions)).Assembly.GetName().Name)
+                    option => option.MigrationsAssembly((typeof(DbContext.UserDbContext)).Assembly.GetName().Name)
                     )
                 );
             return @this

@@ -45,12 +45,6 @@ var issuer = authConfig.Issuers.First();
                     logger.LogError("Authentication failed {0}.", context.Exception);
                     return Task.CompletedTask;
                 },
-                //OnChallenge = context =>
-                //{
-                //    var logger = context.HttpContext.RequestServices.GetRequiredService<ILogger<Program>>();
-                //    logger.LogWarning("Authentication challenge. {0}", context.AuthenticateFailure);
-                //    return Task.CompletedTask;
-                //}
             };
         });
 //}

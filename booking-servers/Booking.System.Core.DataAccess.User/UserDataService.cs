@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Booking.System.Licensing.DataService;
+
 //using CoreModels = Booking.System.Core.
 
 namespace Booking.System.Core.DataAccess.User
 {
-    public class UserDataService : ITenancyUserDataService
+    public class UserDataService : ITenancyUserDataService, ILicensingUserDataService
     {
         private readonly Models.UserServiceConfig _userServiceConfig;
 
@@ -21,6 +23,11 @@ namespace Booking.System.Core.DataAccess.User
         }
 
         public bool SysAdminExists(string userId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public bool AppAdminExists(string userId, string tenantId)
         {
             throw new NotImplementedException();
         }
