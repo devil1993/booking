@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35122.118
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.System", "Booking.System\Booking.System.csproj", "{2DDEEB49-2250-41F4-8D4F-22179A8107F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Booking.System.Core", "Booking.System\Booking.System.Core.csproj", "{2DDEEB49-2250-41F4-8D4F-22179A8107F2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Booking.Admin.Application.Policy", "Booking.Admin.Application.Policy\Booking.Admin.Application.Policy.csproj", "{BC3911A5-A5B6-47BE-8FD3-608985727781}"
 EndProject
